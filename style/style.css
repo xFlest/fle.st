@@ -1,18 +1,13 @@
-body {
-  padding: 0;
-}
 .content {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: absolute;
-  margin: 0;
 }
 .background {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  margin: 0;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -35,13 +30,14 @@ body > div > div {
 }
 .prf {
   width: 88vw;
-  height: 49vw;
-  max-width: 400px;
-  max-height: 50vh;
-  border-radius: 10px;
+  height: 50vw;
+  max-width: 100vh;
+  max-height: 30vh;
+  border-radius: 20px;
   background-color: #57575720;
   backdrop-filter: blur(30px);
   box-shadow: 0 0 10px #00000066;
+  transition: 200ms;
 }
 .prf-avatar-container {
   width: 100%;
@@ -56,9 +52,47 @@ body > div > div {
   border-radius: 100%;
   box-shadow: 0 0 10px #888;
 }
+.prf-text-container {
+  width: 80%;
+  padding: 25px 0 10px;
+  margin: 0 auto;
+}
+.prf-name {
+  height: 1.4rem;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: bold;
+}
+.prf-screenname {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+.prf-link-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: calc(100% - 100px - 3rem) ;
+  margin: 0 auto;
+  padding: 0;
+}
+.prf-link-item {
+  list-style: none;
+  height: 50%;
+  border-bottom: solid 1px #fff;
+  width: calc(20% - 10px);
+}
+.prf-link-item img {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
 .fluid {
   background: linear-gradient(35deg, rgba(255,234,196,1) 0%, rgba(252,255,0,1) 50%, rgba(255,182,0,1) 100%);
-  animation: fluid 10s linear 0s infinite;
+  animation: fluid 35s ease 0s infinite;
   position: relative;
 }
 .bgf1 {

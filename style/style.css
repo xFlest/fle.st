@@ -36,6 +36,7 @@ body > div > div {
   border-radius: 20px;
   background-color: #57575720;
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   box-shadow: 0 0 10px #00000066;
   transition: 200ms;
 }

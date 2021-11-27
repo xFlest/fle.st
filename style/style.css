@@ -29,8 +29,7 @@ body > div > div {
   align-items: center;
 }
 .prf {
-  width: 88vw;
-  max-width: 100vh;
+  width: min(88vw, 100vh);
   height: auto;
   aspect-ratio: 16/9;
   border-radius: 4vmin;
@@ -59,14 +58,14 @@ body > div > div {
   height: 40%;
   margin: 0;
   padding-top: calc(20%/16*9*0.4);
-  font-size: 5vmin;
+  font-size: 6vmin;
   color: white;
   text-align: center;
   font-family: 'Zen Maru Gothic', sans-serif;
   font-weight: bold;
 }
 .prf-screenname {
-  font-size: 1rem;
+  font-size: 4vmin;
   padding: 0;
 }
 .prf-link-container{

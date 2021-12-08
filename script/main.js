@@ -13,3 +13,9 @@ $('.link-dc').on('click', function() {
 $('.link-yt').on('click', function() {
   window.location.href = 'https://youtube.com/channel/UCjUBlrQbLSwC-7fRv47o-2w';
 });
+const setFillHeight = () => {
+  const vh = $(window).height();
+  $(':root').css('--vh',`${vh}px`);
+}
+$(window).resize(setFillHeight);
+setFillHeight();

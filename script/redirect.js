@@ -1,9 +1,9 @@
 const redrect = () => {
   const url = location.href;
   if (url = 'https://fle.st/tweet') {
-    location.replace('https://fle.st');
+    location.href = 'https://fle.st';
   } else {
-    location.replace('https://google.com');
+    location.href = 'https://google.com';
   }
 };
 redrect();

@@ -4,6 +4,7 @@ const setFillHeight = () => {
 }
 $(window).resize(setFillHeight);
 setFillHeight();
+
 const Interval = () => {
   const cardPosition = $('.prf').offset();
   const cardHeight = $('.prf').height();
@@ -19,12 +20,26 @@ const hideCard = () => {
   $('.prf').css('opacity',`${intervalRatio}`);
   if (intervalRatio <= 0) {
     $('.prf').css('pointer-events','none');
-    history.pushState({}, '', '/tweet');
   } else {
     $('.prf').css('pointer-events','auto');
-    history.pushState({}, '', '');
   }
 };
 $('.content-scroller').scroll(function(){
   hideCard();
 });
+
+const redirect = () => {
+  const pathname = location.pathname;
+  if (pathname = tweet) {
+    location.replace('https://fle.st');
+  }
+}
+redirect();
+
+const scrollTweetList = () => {
+  const ref = document.referrer;
+  if (ref = 'https://fle.st/tweet') {
+    $('.content-scroller').animate({scrollTop:$('content').offset().top});
+  }
+}
+scrollTweetList();

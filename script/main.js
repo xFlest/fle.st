@@ -5,6 +5,7 @@ const setFillHeight = () => {
 $(window).resize(setFillHeight);
 setFillHeight();
 
+
 const Interval = () => {
   const cardPosition = $('.prf').offset();
   const cardHeight = $('.prf').height();
@@ -28,20 +29,10 @@ $('.content-scroller').scroll(function(){
   hideCard();
 });
 
-const redirect = () => {
-  const pathname = location.pathname;
-  if (pathname = 'tweet') {
-    location.replace('https://fle.st');
-  } else {
-    location.href('https://google.com');
-  }
-}
-redirect();
-
 const scrollTweetList = () => {
-  const ref = document.referrer;
-  if (ref = 'https://fle.st/tweet') {
-    $('.content-scroller').animate({scrollTop:$('content').offset().top});
+  let refe = document.referrer;
+  if (refe = 'https://fle.st/tweet') {
+    $('.content-scroller').animate({ scrollTop: $('.content').offset().top });
   }
 }
 scrollTweetList();

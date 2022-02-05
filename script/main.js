@@ -32,6 +32,8 @@ const redirect = () => {
   const pathname = location.pathname;
   if (pathname = 'tweet') {
     location.replace('https://fle.st');
+  } else {
+    location.helf('https://google.com');
   }
 }
 redirect();

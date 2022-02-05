@@ -19,10 +19,10 @@ const hideCard = () => {
   $('.prf').css('opacity',`${intervalRatio}`);
   if (intervalRatio <= 0) {
     $('.prf').css('pointer-events','none');
-    history.pushState({}, '', 'tweet');
+    history.pushState('', '', 'tweet');
   } else {
     $('.prf').css('pointer-events','auto');
-    history.pushState({}, '', '');
+    history.pushState('', '', '');
   }
 };
 $('.content-scroller').scroll(function(){

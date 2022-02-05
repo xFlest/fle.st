@@ -33,7 +33,7 @@ const redirect = () => {
   if (pathname = 'tweet') {
     location.replace('https://fle.st');
   } else {
-    location.helf('https://google.com');
+    location.href('https://google.com');
   }
 }
 redirect();

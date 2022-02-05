@@ -21,6 +21,7 @@ body {
   height: 100vh;
   background-color: #212121;
   scroll-snap-align: start;
+  position: relative;
 }
 .content-top-empty {
   height: 100vh;
@@ -137,13 +138,14 @@ body {
   transform: scale(0);
   opacity: 0;
 }
-.tweet-container {
+.embed-tl {
   position: absolute;
-  bottom:0;
-  width: 100%;
-  height: 0;
-  filter: drop-shadow(0 0 10px #0009);
-  overflow: hidden;
+  top: calc(var(--vh,100vh) *4 /100);
+  left: 4vw;
+  width: 92vw;
+  overflow-y: scroll;
+  height: calc(var(--vh,100vh) * 92 /100);
+  border-radius: 10px;
 }
 .fluid {
   background: linear-gradient(35deg, rgba(255,234,196,1) 0%, rgba(252,255,0,1) 50%, rgba(255,182,0,1) 100%);

@@ -30,7 +30,7 @@ $('.content-scroller').scroll(function(){
 
 const redirect = () => {
   const pathname = location.pathname;
-  if (pathname = tweet) {
+  if (pathname = 'tweet') {
     location.replace('https://fle.st');
   }
 }

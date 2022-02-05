@@ -3,7 +3,7 @@ const redrect = () => {
   if (pathnam = 'tweet') {
     location.replace('https://fle.st');
   } else {
-    console.log('pathname');
+    location.href('https://google.com');
   }
 };
 redrect();

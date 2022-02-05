@@ -28,11 +28,3 @@ const hideCard = () => {
 $('.content-scroller').scroll(function(){
   hideCard();
 });
-
-const scrollTweetList = () => {
-  let refe = document.referrer;
-  if (refe = 'https://fle.st/tweet') {
-    $('.content-scroller').animate({ scrollTop: $('.content').offset().top });
-  }
-}
-scrollTweetList();

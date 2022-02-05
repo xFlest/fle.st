@@ -49,6 +49,7 @@ body {
 }
 .prf {
   width: min(88vw, var(--vh,100vh));
+  position: relative;
   height: auto;
   aspect-ratio: 16/9;
   border-radius: 4vmin;
@@ -58,6 +59,20 @@ body {
   box-shadow: 0 0 10px #00000066;
   transition: 200ms;
   pointer-events: auto;
+}
+.prf::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  pointer-events: none;
+}
+.prf-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%; width: 100%;
 }
 .prf-avatar-container {
   width: 100%;

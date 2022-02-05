@@ -22,7 +22,7 @@ const hideCard = () => {
     history.pushState({}, '', '/tweet');
   } else {
     $('.prf').css('pointer-events','auto');
-    history.pushState({}, '', '/');
+    history.pushState({}, '', '');
   }
 };
 $('.content-scroller').scroll(function(){

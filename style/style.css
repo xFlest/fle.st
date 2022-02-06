@@ -47,11 +47,30 @@ body {
   justify-content: center;
   align-items: center;
 }
+@supports (aspect-ratio: 16/9) {
+  .prf {
+    aspect-ratio: 16/9;
+    position: relative;
+  }
+}
+@supports not (aspect-ratio: 16/9) {
+  .prf::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+    pointer-events: none;
+  }
+  .prf-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
 .prf {
   width: min(88vw, var(--vh,100vh));
-  position: relative;
   height: auto;
-  aspect-ratio: 16/9;
   border-radius: 4vmin;
   background-color: #57575720;
   backdrop-filter: blur(30px);
@@ -60,19 +79,9 @@ body {
   transition: 200ms;
   pointer-events: auto;
 }
-.prf::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%;
-  pointer-events: none;
-}
 .prf-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%; width: 100%;
+  height: 100%;
+  width: 100%;
 }
 .prf-avatar-container {
   width: 100%;
@@ -112,17 +121,17 @@ body {
   padding: 0 5%;
 }
 .prf-link-item {
+  position: relative;
   list-style: none;
   height: 40%;
   width: 16%;
-  padding-top: calc(30% /16*9 *0.35);
   transition: 1s;
 }
 .prf-link-item::after {
   content: "";
   position: absolute;
-  width: calc(90% * 0.16);
-  height: .5%;
+  width: 100%;
+  height: 1.5%;
   bottom: 10%;
   border-radius: 20px;
   background-color: #fff;

@@ -50,7 +50,6 @@ body {
 @supports (aspect-ratio: 16/9) {
   .prf {
     aspect-ratio: 16/9;
-    position: relative;
   }
 }
 @supports not (aspect-ratio: 16/9) {
@@ -60,16 +59,10 @@ body {
     padding-top: 56.25%;
     pointer-events: none;
   }
-  .prf-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
 }
 .prf {
   width: min(88vw, var(--vh,100vh));
+  position: relative;
   height: auto;
   border-radius: 4vmin;
   background-color: #57575720;
@@ -83,6 +76,11 @@ body {
   height: 120%;
   width: 100%;
   margin-top: calc(-20% /16 *9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .prf-avatar-container {
   height: 40%;

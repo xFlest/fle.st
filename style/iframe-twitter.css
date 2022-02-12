@@ -1,0 +1,7 @@
+.timeline-Header-title {
+  font-family: 'Jost', sans-serif !important;
+  color: red !important;
+}
+* {
+  opacity: .1 !important;
+}

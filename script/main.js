@@ -63,3 +63,34 @@ $('.link-list').scroll(function(){
   hideLlNav();
 });
 hideLlNav();
+
+const openClose = () => {
+  const hasClass = $('.lln-open').hasClass('lln-close')
+  if (hasClass == true) {
+    $('.link-list').css('flex-wrap', 'wrap');
+    setTimeout(function() {
+      $('.link-list').css('flex-wrap', 'nowrap');
+    }, 500);
+    $('.lln-open').removeClass('llo');
+  } else {
+    $('.link-list').css('flex-wrap', 'wrap');
+  }
+  $('.link-list').toggleClass('ll-open');
+  $('.lln-open').toggleClass('lln-close');
+}
+$('.lln-open').on('click',function(){
+  const scroll = $('.link-list').scrollLeft();
+  if (scroll == 0) {
+    openClose();
+  } else {
+    $('.lln-open').toggleClass('llo');
+    $('.link-list').scrollLeft(0);
+  }
+})
+$('.link-list').scroll(function(){
+  const scroll = $('.link-list').scrollLeft();
+  const hasClose = $('.lln-open').hasClass('llo');
+  if (scroll == 0 && hasClose ==true) {
+    openClose();
+  }
+});

@@ -123,6 +123,8 @@ body {
 .prf-screenname {
   display: block;
   font-size: 4vmin;
+  font-family: 'Jost', sans-serif;
+  font-weight: normal;
 }
 .prf-link-container{
   display: flex;
@@ -170,11 +172,25 @@ body {
   transform: scale(0);
   opacity: 0;
 }
+@media (min-aspect-ratio: 1/1) {
+  .content > div {
+    width: 47%;
+    height: 92vh;
+    overflow: scroll;
+  }
+  .content {
+    padding-top: 4vh;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .main-content {
+    padding-bottom: 4vh;
+  }
+}
 .embed-tl {
   width: 92%;
-  max-width: var(--vh,100vh);
   overflow-y: scroll;
-  height: calc(92% - 16vmin);
+  height: auto;
   border-radius: 5px;
   overflow: scroll;
   background-color: #fff1;
@@ -243,9 +259,10 @@ body {
   color: #0000 ;
   -webkit-text-stroke: 2px #FFF;
   text-stroke: 2px #FFF;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif;
 }
-.link-list {
+.link-list,
+.link-list-don{
   width: 100%;
   height: 16vmin;
   overflow: scroll;
@@ -254,14 +271,15 @@ body {
   scroll-snap-type: x mandatory;
   padding: 0;
   margin: 0 auto;
-  gap: 2.5%;
+  gap: 2.4vmin;
   scroll-behavior: smooth;
+  transition: .5s;
 }
-.link-list li {
+:is(.link-list, .link-list-don) li {
   display: block;
   box-sizing: border-box;
-  height: 100%;
-  flex-basis: 23%;
+  height: 16vmin;
+  flex-basis: calc((100% - 2.4vmin*3)/4);
   border: solid .3vmin #fff9;
   border-radius: 3vmin;
   scroll-snap-align: start;
@@ -269,7 +287,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.link-list a {
+:is(.link-list, .link-list-don) a {
   display: flex;
   width: 100%;
   height: 100%;
@@ -277,10 +295,10 @@ body {
   justify-content: center;
   -webkit-tap-highlight-color:#0000;
 }
-.link-list img {
+:is(.link-list, .link-list-don) img {
   width: 30%
 }
-.link-list li::before {
+:is(.link-list, .link-list-don) li::before {
   content: "";
   position: absolute;
   top: 0;
@@ -292,7 +310,7 @@ body {
   pointer-events: none;
   transition: .5s;
 }
-.link-list li:active::before {
+:is(.link-list, .link-list-don) li:active::before {
   transform: translate(-50%,-50%) rotate(45deg) scale(3);
 }
 .link-list-nav {
@@ -303,13 +321,13 @@ body {
 }
 .lln-left,
 .lln-right {
-  content: "";
   position: absolute;
   top: 1.5vmin;
   width: 2vmin;
   height: 2vmin;
   border-top: .3vmin solid #fff;
   border-right: .3vmin solid #fff;
+  transition: .5s;
 }
 .lln-left {
   left: 10px;
@@ -321,11 +339,65 @@ body {
 }
 .main-content {
   width: 92%;
-  max-width: var(--vh, 100vh);
   flex-shrink: 0;
   padding-top: 5vmin;
 }
 .hide-llnav {
-  opacity: .5;
+  opacity: .3;
   pointer-events: none;
+}
+.lln-open {
+  position: absolute;
+  top: 1.5vmin;
+  width: 2vmin;
+  height: 2vmin;
+  right: 50%;
+  left: 50%;
+  transform: translateY(25%);
+  transition: .5s;
+}
+.lln-open span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  width: 100%;
+  height: .3vmin;
+  background-color: #fff;
+  transition: .5s;
+}
+.lln-open span:first-child {
+  transform: rotate(-45deg) translateX(50%);
+}
+.lln-open span:last-child {
+  transform: rotate(45deg) translateX(-50%);
+}
+.lln-close {
+  transform: translateY(-100%);
+}
+.lln-close span:first-child {
+  transform: rotate(-45deg) translateX(-50%);
+}
+.lln-close span:last-child {
+  transform: rotate(45deg) translateX(50%);
+}
+.link-list.ll-open {
+  flex-wrap: wrap;
+  height: calc(16vmin *4 + 2.4vmin *3);
+}
+.ll-open + .link-list-nav .lln-left,
+.ll-open + .link-list-nav .lln-right {
+  opacity: 0;
+}
+.ll-title,
+.ll-title-don {
+  height: 4vmin;
+  line-height: 4vmin;
+  font-size: 4vmin;
+  color: #fff;
+  margin: 5px 0;
+  font-family: 'Jost', sans-serif;
+}
+.ll-title-don {
+  margin-top: 4vmin;
 }

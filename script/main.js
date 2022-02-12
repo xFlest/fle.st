@@ -5,6 +5,11 @@ const setFillHeight = () => {
 $(window).resize(setFillHeight);
 setFillHeight();
 
+$(function() {
+  $('#twitter-widget-0').on('load', function() {
+    $('.#twitter-widget-0').contents().find('head').append('<link rel="stylesheet" href="https://fle.st/style/iframe-twitter.css">');
+  });
+});
 
 const Interval = () => {
   const cardPosition = $('.prf').offset();
@@ -83,7 +88,7 @@ $('.lln-open').on('click',function(){
   if (scroll == 0) {
     openClose();
   } else {
-    $('.lln-open').toggleClass('llo');
+    $('.lln-open').addClass('llo');
     $('.link-list').scrollLeft(0);
   }
 })

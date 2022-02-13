@@ -1,7 +1,69 @@
-.timeline-Header-title {
-  font-family: 'Jost', sans-serif !important;
-  color: red !important;
+.timeline-Widget {
+  background-color: #0000;
 }
-* {
-  opacity: .1 !important;
+.timeline-Header {
+  height: calc(var(--vmin,100vmin)*0.04);
+  padding: 0;
+}
+.timeline-Header-title {
+  height: 100%;
+  line-height: 100%;
+  font-size: calc(var(--vmin)*0.04) !important;
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+}
+.timeline-Body {
+  border: 0 !important
+}
+.timeline-TweetList-tweet {
+  border: solid calc(var(--vmin)*0.003) #fff9 !important;
+  border-radius: calc(var(--vmin)*0.03);
+  margin: calc(var(--vmin)*0.03) 0;
+}
+.timeline-Tweet {
+  -webkit-tap-highlight-color:#0000;
+  padding: calc(var(--vmin)*0.04) calc(var(--vmin)*0.03) 0;
+}
+.timeline-Tweet:hover {
+  background-color: #0000 !important;
+}
+.TweetAuthor-name {
+  font-family: 'Jost', 'Zen Maru Gothic', sans-serif;
+  font-size: calc(var(--vmin)*0.035) !important;
+  line-height: calc(var(--vmin)*0.045) !important;
+}
+.TweetAuthor-name .Emoji {
+  font-size: calc(var(--vmin)*0.025) !important;
+}
+.TweetAuthor-screenName {
+  font-family: 'Jost', sans-serif;
+  font-size: calc(var(--vmin)*0.03) !important;
+  line-height: calc(var(--vmin)*0.04) !important;
+}
+.timeline-Tweet-text {
+  margin: calc(var(--vmin)*0.01) 0 0 40px;
+  font-family: 'Jost', 'Zen Maru Gothic', sans-serif;
+  font-size: calc(var(--vmin)*0.035) !important;
+  line-height: calc(var(--vmin)*0.045) !important;
+}
+.timeline-Tweet-text a {
+  color: #fae46d;
+}
+.Icon--retweetBadge {
+  filter: hue-rotate(265deg) brightness(130%);
+}
+.timeline-LoadMore-prompt {
+  border: solid calc(var(--vmin)*0.003) #fff9 !important;
+  background-color: #0000 !important;
+  color: #fae46d !important;
+  -webkit-tap-highlight-color:#0000;
+}
+.timeline-InformationCircle,
+.timeline-Header-byline,
+.timeline-Tweet-Action,
+.timeline-Tweet-brand,
+.timeline-Tweet-metadata,
+.timeline-LoadMore-endOfTimelineMessage,
+.timeline-Footer {
+  display: none;
 }

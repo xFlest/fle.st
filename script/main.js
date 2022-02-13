@@ -1,13 +1,19 @@
 const setFillHeight = () => {
   const vh = $(window).height();
+  const vw = $(window).width();
   $(':root').css('--vh', `${vh}px`);
+  if (vw > vh) {
+    $(':root').css('--vmin', `${vh}px`);
+  } else {
+    $(':root').css('--vmin', `${vw}px`);
+  }
 }
 $(window).resize(setFillHeight);
 setFillHeight();
 
 $(function() {
   $('#twitter-widget-0').on('load', function() {
-    $('.#twitter-widget-0').contents().find('head').append('<link rel="stylesheet" href="https://fle.st/style/iframe-twitter.css">');
+    $('#twitter-widget-0').contents().find('head').append('<link rel="stylesheet" href="https://fle.st/style/iframe-twitter.css">');
   });
 });
 
